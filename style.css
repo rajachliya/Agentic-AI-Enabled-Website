@@ -1,0 +1,209 @@
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #1e293b;
+  background-color: #0f172a;
+  min-height: 100vh;
+}
+
+/* ── Page: center the card ────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  /* subtle radial glow behind the card */
+  background: radial-gradient(ellipse at 50% 40%, #1e2d5a 0%, #0f172a 70%);
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 40px 40px;
+  width: 100%;
+  max-width: 420px;
+
+  /* Signature element: animated gradient border via outline trick */
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.25),
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+
+  transition: box-shadow 0.4s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 0 0 2px rgba(99, 102, 241, 0.55),
+    0 24px 72px rgba(0, 0, 0, 0.5),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Card Header ──────────────────────────────────────────── */
+.card-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.logo {
+  font-size: 32px;
+  color: #6366f1;
+  margin-bottom: 16px;
+  display: block;
+  line-height: 1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1;    }
+  50%       { transform: scale(1.1); opacity: 0.75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo { animation: none; }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ── Form ─────────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Row that holds the label + forgot link side-by-side */
+.field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #0f172a;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ── Forgot Password link ─────────────────────────────────── */
+.forgot-link {
+  font-size: 12.5px;
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+/* ── Login Button ─────────────────────────────────────────── */
+.btn-login {
+  width: 100%;
+  padding: 13px;
+  margin-top: 4px;
+  background: #6366f1;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.1px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn-login:hover {
+  background: #4f46e5;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.45);
+}
+
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+.btn-login:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.5);
+  outline-offset: 2px;
+}
+
+/* ── Sign-up prompt ───────────────────────────────────────── */
+.signup-prompt {
+  text-align: center;
+  font-size: 13.5px;
+  color: #64748b;
+  margin-top: 24px;
+}
+
+.signup-prompt a {
+  color: #6366f1;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.signup-prompt a:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+/* ── Responsive: tighten padding on small screens ─────────── */
+@media (max-width: 480px) {
+  .card {
+    padding: 36px 24px 32px;
+  }
+}
