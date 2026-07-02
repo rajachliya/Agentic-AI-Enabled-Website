@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #94a3b8;
+}
+
+section {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.goal-input-row,
+.task-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #6366f1;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #4f46e5;
+}
+
+button:disabled {
+  background: #475569;
+  cursor: not-allowed;
+}
+
+.status-msg {
+  font-size: 13px;
+  min-height: 18px;
+  margin: 10px 0 0;
+}
+
+.status-msg.error {
+  color: #f87171;
+}
+
+.status-msg.loading {
+  color: #fbbf24;
+}
+
+.generated-tasks {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gen-task-card {
+  background: #0f172a;
+  border-left: 4px solid #6366f1;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.gen-task-card .task-name {
+  font-weight: 600;
+}
+
+.gen-task-card .task-meta {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.priority-high { border-left-color: #f87171; }
+.priority-medium { border-left-color: #fbbf24; }
+.priority-low { border-left-color: #34d399; }
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f172a;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+#taskList li.completed span {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+.task-actions button {
+  background: transparent;
+  color: #94a3b8;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.task-actions button:hover {
+  color: #e2e8f0;
+  background: #334155;
+}

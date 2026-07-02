@@ -1,0 +1,17 @@
+{
+  "name": "week3-smart-task-planner",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^0.15.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Smart Task Planner</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Task Planner</h1>
+
+    <!-- Goal input -> Gemini generates steps -->
+    <section class="goal-section">
+      <h2>What's your goal?</h2>
+      <div class="goal-input-row">
+        <input type="text" id="goalInput" placeholder="e.g. Plan a trip to Manali" />
+        <button id="generateBtn">Generate Plan</button>
+      </div>
+      <p id="statusMsg" class="status-msg"></p>
+      <div id="generatedTasks" class="generated-tasks"></div>
+    </section>
+
+    <!-- Week 2 style manual task manager -->
+    <section class="manual-section">
+      <h2>Your Task List</h2>
+      <div class="task-input-row">
+        <input type="text" id="taskInput" placeholder="Add a task manually..." />
+        <button id="addTaskBtn">Add Task</button>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
